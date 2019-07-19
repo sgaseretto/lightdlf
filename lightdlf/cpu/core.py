@@ -61,8 +61,9 @@ class Tensor(object):
         @grad: gradiente
         @grad_orign
         '''
-        #         tab=tab
         if (self.autograd):
+            if grad is None:
+                grad = Tensor(np.ones_like(self.data))
             if (grad_origin is not None):
                 # Verifica para asegurar si se puede hacer retropropagacion
                 if (self.children[grad_origin.id] == 0):
@@ -123,6 +124,18 @@ class Tensor(object):
             if ("expand" in self.creation_op):
                 dim = int(self.creation_op.split("_")[1])
                 self.creators[0].backward(self.grad.sum(dim))
+
+            if (self.creation_op == "sigmoid"):
+                ones = Tensor(np.ones_like(self.grad.data))
+                self.creators[0].backward(self.grad * (self * (ones - self)))
+
+            if (self.creation_op == "tanh"):
+                ones = Tensor(np.ones_like(self.grad.data))
+                self.creators[0].backward(self.grad * (ones - (self * self)))
+
+            if (self.creation_op == 'relu'):
+                mask = Tensor(self.data > 0)
+                self.creators[0].backward(self.grad * mask)
 
     def __neg__(self):
         if (self.autograd):
@@ -214,6 +227,30 @@ class Tensor(object):
                           creators=[self, x],
                           creation_op="mm")
         return Tensor(self.data.dot(x.data))
+
+    def sigmoid(self):
+        if (self.autograd):
+            return Tensor(1 / (1 + np.exp(-self.data)),
+                          autograd=True,
+                          creators=[self], creation_op='sigmoid')
+        return Tensor(1 / (1 + np.exp(-self.data)))
+
+    def tanh(self):
+        if (self.autograd):
+            return Tensor(np.tanh(self.data),
+                          autograd=True,
+                          creators=[self],
+                          creation_op='tanh')
+        return Tensor(np.tanh(self.data))
+
+    def relu(self):
+        ones_and_zeros = self.data > 0
+        if (self.autograd):
+            return Tensor(self.data * ones_and_zeros,
+                          autograd=True,
+                          creators=[self],
+                          creation_op='relu')
+        return Tensor(self.data * ones_and_zeros)
 
     def __repr__(self):
         return str(self.data.__repr__())

@@ -26,6 +26,30 @@ class Linear(Layer):
         return Tensor.mm(input, self.weight) + self.bias.expand(0, len(input.data))
 
 
+class Tanh(Layer):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, input):
+        return input.tanh()
+
+
+class Sigmoid(Layer):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, input):
+        return input.sigmoid()
+
+
+class Relu(Layer):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, input):
+        return input.relu()
+
+
 class Sequential(Layer):
 
     def __init__(self, layers=list()):
