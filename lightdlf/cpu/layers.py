@@ -71,15 +71,6 @@ class Sequential(Layer):
         return params
 
 
-class MSELoss(Layer):
-
-    def __init__(self):
-        super().__init__()
-
-    def forward(self, pred, target):
-        return ((pred - target) * (pred - target)).sum(0)
-
-
 class Embedding(Layer):
     def __init__(self, vocab_size, dim):
         super().__init__()
@@ -94,3 +85,21 @@ class Embedding(Layer):
 
     def forward(self, input):
         return self.weight.index_select(input)
+
+
+class MSELoss(Layer):
+
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, pred, target):
+        return ((pred - target) * (pred - target)).sum(0)
+
+
+class CrossEntropyLoss(object):
+
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, input, target):
+        return input.cross_entropy(target)

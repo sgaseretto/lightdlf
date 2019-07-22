@@ -148,6 +148,10 @@ class Tensor(object):
                 mask = Tensor(self.data > 0)
                 self.creators[0].backward(self.grad * mask)
 
+            if (self.creation_op == "cross_entropy"):
+                dx = self.softmax_output - self.target_dist
+                self.creators[0].backward(Tensor(dx))
+
     def __neg__(self):
         if (self.autograd):
             return Tensor(self.data * -1,
@@ -273,6 +277,27 @@ class Tensor(object):
                           creators=[self],
                           creation_op='relu')
         return Tensor(self.data * ones_and_zeros)
+
+    def cross_entropy(self, target_indices):
+        temp = np.exp(self.data)
+        softmax_output = temp / np.sum(temp,
+                                       axis=len(self.data.shape) - 1,
+                                       keepdims=True)
+
+        t = target_indices.data.flatten()
+        p = softmax_output.reshape(len(t), -1)
+        target_dist = np.eye(p.shape[1])[t]
+        loss = -(np.log(p) * (target_dist)).sum(1).mean()
+
+        if (self.autograd):
+            out = Tensor(loss,
+                         autograd=True,
+                         creators=[self],
+                         creation_op='cross_entropy')
+            out.softmax_output = softmax_output
+            out.target_dist = target_dist
+            return out
+        return Tensor(loss)
 
     def __repr__(self):
         return str(self.data.__repr__())
