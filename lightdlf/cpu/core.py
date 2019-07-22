@@ -125,6 +125,17 @@ class Tensor(object):
                 dim = int(self.creation_op.split("_")[1])
                 self.creators[0].backward(self.grad.sum(dim))
 
+            if (self.creation_op == "index_select"):
+                # new_grad es un vector de 0s que luego contendra
+                # los gradientes para cada embedding
+                new_grad = np.zeros_like(self.creators[0].data)
+                # se obtienen los indices en un vector unidimensional
+                indices_ = self.index_select_indices.data.flatten()
+                grad_ = grad.data.reshape(len(indices_), -1)
+                for i in range(len(indices_)):
+                    new_grad[indices_[i]] = new_grad[indices_[i]] + grad_[i]
+                self.creators[0].backward(Tensor(new_grad))
+
             if (self.creation_op == "sigmoid"):
                 ones = Tensor(np.ones_like(self.grad.data))
                 self.creators[0].backward(self.grad * (self * (ones - self)))
@@ -227,6 +238,17 @@ class Tensor(object):
                           creators=[self, x],
                           creation_op="mm")
         return Tensor(self.data.dot(x.data))
+
+    def index_select(self, indices):
+        if (self.autograd):
+            new = Tensor(self.data[indices.data],
+                         autograd=True,
+                         creators=[self],
+                         creation_op='index_select')
+            # se agregan los indices como atributos del tensor
+            new.index_select_indices = indices
+            return new
+        return Tensor(self.data[indices.data])
 
     def sigmoid(self):
         if (self.autograd):

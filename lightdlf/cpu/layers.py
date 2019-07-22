@@ -78,3 +78,19 @@ class MSELoss(Layer):
 
     def forward(self, pred, target):
         return ((pred - target) * (pred - target)).sum(0)
+
+
+class Embedding(Layer):
+    def __init__(self, vocab_size, dim):
+        super().__init__()
+        self.vocab_size = vocab_size
+        self.dim = dim
+        # Esta inicializacion randomica es la convencion
+        # para inicializar embeddings de word2vec
+        weight = Tensor((np.random.rand(vocab_size, dim) - 0.5) / dim, autograd=True)
+        self.weight = weight
+        # se agregan los pesos a los parametros de la capa
+        self.parameters.append(self.weight)
+
+    def forward(self, input):
+        return self.weight.index_select(input)
