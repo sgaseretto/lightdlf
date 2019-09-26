@@ -1,2 +1,2 @@
 # LightDLF
-Understandig Deep Learning Frameworks by building one.
+Implementacion de un framework de deep learning para entender como funcionan
