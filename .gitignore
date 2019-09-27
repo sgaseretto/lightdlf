@@ -3,3 +3,5 @@ notebooks/.ipynb_checkpoints/*
 .idea/
 __pycache__/
 .DS_Store
+/.ipynb_checkpoints/
+lightdlf/__pycache__
