@@ -4,4 +4,4 @@ notebooks/.ipynb_checkpoints/*
 __pycache__/
 .DS_Store
 /.ipynb_checkpoints/
-lightdlf/__pycache__
+lightdlf/__pycache__/
