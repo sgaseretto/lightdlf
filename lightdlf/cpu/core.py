@@ -54,7 +54,7 @@ class Tensor(object):
                 return False
         return True
 
-    def backward(self, grad, grad_origin=None):
+    def backward(self, grad=None, grad_origin=None):
         '''
         Funcion que propaga recursivamente el gradiente a los creators o padres del tensor
 
