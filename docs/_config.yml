@@ -1,7 +1,7 @@
-repository: sgaseretto/hybrec
+repository: sgaseretto/lightdlf
 output: web
-topnav_title: hybrec
-site_title: hybrec
+topnav_title: lightdlf
+site_title: lightdlf
 company_name: AWI
 description: Library to build and test Hybrid Recommender Systems
 # Add Google analytics id if you have one and want to use it here
