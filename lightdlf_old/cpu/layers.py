@@ -1,5 +1,5 @@
 import numpy as np
-from lightdlf.cpu.core import Tensor
+from lightdlf_old.cpu.core import Tensor
 
 
 class Layer(object):
