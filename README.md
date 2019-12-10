@@ -13,6 +13,8 @@
 > Implementacion de un framework de deep learning para entender como funcionan.
 
 
+Para más detalles ver la [documentacion](https://sgaseretto.github.io/lightdlf/)
+
 ## Instalación
 ```pip install lightdlf```
 
