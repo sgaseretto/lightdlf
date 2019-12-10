@@ -22,7 +22,7 @@ entries:
       title: "Agregando soporte a m\xE1s funciones a autograd para retropropagar"
       url: /04a-soporte-a-mas-funciones-con-autograd
     - output: web,pdf
-      title: Title
+      title: Backprop Manual vs Autograd
       url: /04b-backprop-manual-vs-autograd
     - output: web,pdf
       title: "Intuici\xF3n sobre el calculo de gradientes de las operaciones comunes\

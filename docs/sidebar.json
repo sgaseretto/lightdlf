@@ -5,7 +5,7 @@
     "Introduccion al C\u00e1lculo Autom\u00e1tico de Gradiente": "/02-intro-autograd",
     "A\u00f1adiendo la posibilidad de usar multiples veces el mismo tensor": "/03-tensores-de-usos-multiples",
     "Agregando soporte a m\u00e1s funciones a autograd para retropropagar": "/04a-soporte-a-mas-funciones-con-autograd",
-    "Title": "/04b-backprop-manual-vs-autograd",
+    "Backprop Manual vs Autograd": "/04b-backprop-manual-vs-autograd",
     "Intuici\u00f3n sobre el calculo de gradientes de las operaciones comunes sobre Tensores": "/04c-intuicion-sobre-las-demas-funciones",
     "Agregando Optimizacion Autom\u00e1tica": "/05-sgd",
     "A\u00f1adiendo soporte a capas": "/06-soporte-de-capas",
