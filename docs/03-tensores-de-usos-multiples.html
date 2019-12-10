@@ -1,10 +1,10 @@
 ---
 
-title: Title
+title: Añadiendo la posibilidad de usar multiples veces el mismo tensor
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "summary"
+summary: "Como pasar varios gradientes a un tensor utilizado en multiples operaciones"
 ---
 <!--
 
@@ -23,7 +23,7 @@ summary: "summary"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="A&#241;adiendo-la-posibilidad-de-usar-multiples-veces-el-mismo-tensor">A&#241;adiendo la posibilidad de usar multiples veces el mismo tensor<a class="anchor-link" href="#A&#241;adiendo-la-posibilidad-de-usar-multiples-veces-el-mismo-tensor">&#182;</a></h1><p>Como se vio al final del <a href="02-intro-autograd.ipynb">notebook</a> anterior, si un tensor participa en la creacion de más de un tensor, su gradiente no se acumula, simplemente sobreescribe el gradiente con el ultimo gradiente recibido por el tensor.</p>
+<p>Como se vio al final del <a href="02-intro-autograd.ipynb">notebook</a> anterior, si un tensor participa en la creacion de más de un tensor, su gradiente no se acumula, simplemente sobreescribe el gradiente con el ultimo gradiente recibido por el tensor.</p>
 <p>Para que un tensor pueda participar en la creacion de más de un tensor y mantener correctamente su gradiente es necesario añadir una nueva funcion y actualizar otras tres.</p>
 <p>Primero que nada los gradientes tienen que poder ser acumulables, permitiendo que si un tensor es usado más de una vez, pueda recibir el gradiente de todos sus hijos (tensores que se originan a partir de el).
 Adicionalmente se debe crear un contador que permite saber el número de gradientes recibidos por cada uno de los <code>hijos</code> o tensores creados a partir de los iniciales. Con este conteo también se previene retropropagar el gradiente del mismo hijo dos veces.</p>

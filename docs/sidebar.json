@@ -1,6 +1,23 @@
 {
   "lightdlf": {
     "Overview": "/",
-    "Title": "/13a-fl-for-dengue-cases-pred"
+    "Introduccion a Tensores": "/01-intro-tensores",
+    "Introduccion al C\u00e1lculo Autom\u00e1tico de Gradiente": "/02-intro-autograd",
+    "A\u00f1adiendo la posibilidad de usar multiples veces el mismo tensor": "/03-tensores-de-usos-multiples",
+    "Agregando soporte a m\u00e1s funciones a autograd para retropropagar": "/04a-soporte-a-mas-funciones-con-autograd",
+    "Title": "/04b-backprop-manual-vs-autograd",
+    "Intuici\u00f3n sobre el calculo de gradientes de las operaciones comunes sobre Tensores": "/04c-intuicion-sobre-las-demas-funciones",
+    "Agregando Optimizacion Autom\u00e1tica": "/05-sgd",
+    "A\u00f1adiendo soporte a capas": "/06-soporte-de-capas",
+    "Pruebas sin capa secuencial": "/06a-sin-capa-secuencial",
+    "Agregando funciones no lineales a las capas": "/07-capas-no-lineales",
+    "Prueba de Lightdlf": "/07a-lightdlf",
+    "Embeddings: ": "/08-capa-de-embeddings",
+    "Prueba de la capa de embeddings de lightdlf": "/08a-lightdlf-embedding",
+    "```Cross-entropy Loss``` ": "/09-cross-entropy-loss",
+    "Bag of words": "/10-bag-of-words",
+    "Agregando como capa una red neuronal recurrente o ```RNN```": "/11-rnn-cell",
+    "Introducci\u00f3n a Federated Learning o Aprendizaje Federado": "/13-federated-learning",
+    "Predicci\u00f3n de casos de Dengue preservando la privacidad de los datos": "/13a-fl-for-dengue-cases-pred"
   }
 }

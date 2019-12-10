@@ -1,10 +1,10 @@
 ---
 
-title: Title
+title: Introduccion al Cálculo Automático de Gradiente
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "summary"
+summary: "La operacion básica para optimizar una red neuronal"
 ---
 <!--
 
@@ -23,7 +23,7 @@ summary: "summary"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduccion-al-C&#225;lculo-Autom&#225;tico-de-Gradiente">Introduccion al C&#225;lculo Autom&#225;tico de Gradiente<a class="anchor-link" href="#Introduccion-al-C&#225;lculo-Autom&#225;tico-de-Gradiente">&#182;</a></h1><p>En lugar de calcular manualmente el gradiente de cada capa obteniendo la derivada del resultado de la capa anterior, los frameworks de deeplearning hacen esto de forma automática. Para poder agregar esta funcionalidad, debemos agregar a los tensores la capacidad de crear algo llamado <code>Grafo computacional</code></p>
+<p>En lugar de calcular manualmente el gradiente de cada capa obteniendo la derivada del resultado de la capa anterior, los frameworks de deeplearning hacen esto de forma automática. Para poder agregar esta funcionalidad, debemos agregar a los tensores la capacidad de crear algo llamado <code>Grafo computacional</code></p>
 <h2 id="Grafo-Computacional-o-computational-grapg">Grafo Computacional o <code>computational grapg</code><a class="anchor-link" href="#Grafo-Computacional-o-computational-grapg">&#182;</a></h2><p>Para poder realizar <code>retropropagación</code> o <code>backprop</code> sobre una red neuronal, debemos ser capaces de poder rastrear y determinar todas las operaciones y transformaciones que son realizadas sobre los tensores que componen la arquitectura de la red. Para esto definimos lo que se llama un grafo computacional. Que básicamente, si obtuvimos un tensor <code>z</code> a partir de la suma de los tensores <code>x</code> e <code>y</code>, luego de obtener el valor de z y el error, debemos poder propagar el error por el resto de los tensores que participaron en la creacion de <code>z</code> es decir por <code>x</code> e <code>y</code> y teniendo en cuenta la operación mediante la cual se combinaron.</p>
 <p>Para esto debemos agregar a la clase <code>Tensor</code> los siguientes atributos:</p>
 <ul>

@@ -1,10 +1,10 @@
 ---
 
-title: Title
+title: Agregando soporte a más funciones a autograd para retropropagar
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "summary"
+summary: "Extendiendo autograd para algunas funciones adicionales"
 ---
 <!--
 
@@ -23,7 +23,7 @@ summary: "summary"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Agregando-soporte-a-m&#225;s-funciones-a-autograd-para-retropropagar">Agregando soporte a m&#225;s funciones a autograd para retropropagar<a class="anchor-link" href="#Agregando-soporte-a-m&#225;s-funciones-a-autograd-para-retropropagar">&#182;</a></h1><p>En el <a href="./03-tensores-de-usos-multiples.ipynb">notebook</a> anterior se implemento autograd con la operación de <code>suma</code> pero en un grafo computacional la suma es una de muchas otras operaciones que se pueden realizar con tensores. Por tanto es necesario definir estas operaciones con sus respectivos gradientes o derivadas.</p>
+<p>En el <a href="./03-tensores-de-usos-multiples.ipynb">notebook</a> anterior se implemento autograd con la operación de <code>suma</code> pero en un grafo computacional la suma es una de muchas otras operaciones que se pueden realizar con tensores. Por tanto es necesario definir estas operaciones con sus respectivos gradientes o derivadas.</p>
 <p>Para la suma definimos el siguiente metodo:</p>
 
 <pre><code>def __add__(self, other):

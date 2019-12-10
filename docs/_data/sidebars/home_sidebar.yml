@@ -10,7 +10,59 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Introduccion a Tensores
+      url: /01-intro-tensores
+    - output: web,pdf
+      title: "Introduccion al C\xE1lculo Autom\xE1tico de Gradiente"
+      url: /02-intro-autograd
+    - output: web,pdf
+      title: "A\xF1adiendo la posibilidad de usar multiples veces el mismo tensor"
+      url: /03-tensores-de-usos-multiples
+    - output: web,pdf
+      title: "Agregando soporte a m\xE1s funciones a autograd para retropropagar"
+      url: /04a-soporte-a-mas-funciones-con-autograd
+    - output: web,pdf
       title: Title
+      url: /04b-backprop-manual-vs-autograd
+    - output: web,pdf
+      title: "Intuici\xF3n sobre el calculo de gradientes de las operaciones comunes\
+        \ sobre Tensores"
+      url: /04c-intuicion-sobre-las-demas-funciones
+    - output: web,pdf
+      title: "Agregando Optimizacion Autom\xE1tica"
+      url: /05-sgd
+    - output: web,pdf
+      title: "A\xF1adiendo soporte a capas"
+      url: /06-soporte-de-capas
+    - output: web,pdf
+      title: Pruebas sin capa secuencial
+      url: /06a-sin-capa-secuencial
+    - output: web,pdf
+      title: Agregando funciones no lineales a las capas
+      url: /07-capas-no-lineales
+    - output: web,pdf
+      title: Prueba de Lightdlf
+      url: /07a-lightdlf
+    - output: web,pdf
+      title: 'Embeddings: '
+      url: /08-capa-de-embeddings
+    - output: web,pdf
+      title: Prueba de la capa de embeddings de lightdlf
+      url: /08a-lightdlf-embedding
+    - output: web,pdf
+      title: '```Cross-entropy Loss``` '
+      url: /09-cross-entropy-loss
+    - output: web,pdf
+      title: Bag of words
+      url: /10-bag-of-words
+    - output: web,pdf
+      title: Agregando como capa una red neuronal recurrente o ```RNN```
+      url: /11-rnn-cell
+    - output: web,pdf
+      title: "Introducci\xF3n a Federated Learning o Aprendizaje Federado"
+      url: /13-federated-learning
+    - output: web,pdf
+      title: "Predicci\xF3n de casos de Dengue preservando la privacidad de los datos"
       url: /13a-fl-for-dengue-cases-pred
     output: web
     title: lightdlf
