@@ -6,6 +6,6 @@ index = {}
 
 modules = []
 
-git_url = "https://github.com/sgaseretto/lightdlf/tree/refactor-nbdev/"
+git_url = "https://github.com/sgaseretto/lightdlf/tree/master/"
 
 def custom_doc_links(name): return None
