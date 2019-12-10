@@ -14,7 +14,7 @@
     "Prueba de Lightdlf": "/07a-lightdlf",
     "Embeddings: ": "/08-capa-de-embeddings",
     "Prueba de la capa de embeddings de lightdlf": "/08a-lightdlf-embedding",
-    "```Cross-entropy Loss``` ": "/09-cross-entropy-loss",
+    "Cross-entropy Loss ": "/09-cross-entropy-loss",
     "Bag of words": "/10-bag-of-words",
     "Agregando como capa una red neuronal recurrente o ```RNN```": "/11-rnn-cell",
     "Introducci\u00f3n a Federated Learning o Aprendizaje Federado": "/13-federated-learning",

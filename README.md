@@ -10,8 +10,11 @@
 
 # LightDLF
 
-> Implementacion de un framework de deep learning para entender como funcionan
+> Implementacion de un framework de deep learning para entender como funcionan.
 
+
+## Instalación
+```pip install lightdlf```
 
 ## Requerimientos
 - numpy

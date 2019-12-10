@@ -50,7 +50,7 @@ entries:
       title: Prueba de la capa de embeddings de lightdlf
       url: /08a-lightdlf-embedding
     - output: web,pdf
-      title: '```Cross-entropy Loss``` '
+      title: 'Cross-entropy Loss '
       url: /09-cross-entropy-loss
     - output: web,pdf
       title: Bag of words
